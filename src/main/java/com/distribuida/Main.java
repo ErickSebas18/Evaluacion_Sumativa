@@ -45,6 +45,10 @@ public class Main {
         var book = servicio.findById(bookActualizado.getId());
 
         if(book != null){
+            book.setIsbn(bookActualizado.getIsbn());
+            book.setTitle(bookActualizado.getTitle());
+            book.setAuthor(bookActualizado.getAuthor());
+            book.setPrice(bookActualizado.getPrice());
             res.send(gson.toJson(servicio.update(book)));
         }
     }
